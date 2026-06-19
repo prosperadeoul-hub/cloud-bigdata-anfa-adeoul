@@ -11,7 +11,7 @@ Cette première séance a permis de mettre en place la fondation de l'architectu
 4. **Automatisation de l'Ingestion** : Écriture et exécution du script Python `upload_referentiel.py` pour téléverser automatiquement le référentiel des lignes, arrêts, bus et tarifs dans MinIO.
 
 ## Capture d'écran
-![alt text](captures/bucket-anfa-raw.png.png)
+![Contenu du bucket anfa-raw](captures/bucket-anfa-raw.png)
 
 ## Difficultés rencontrées
 **Les caractères d'échappement de fin de ligne (`\`) prévus pour Linux dans le sujet de TP ont provoqué des erreurs dans le terminal PowerShell, résolues par l'utilisation directe de Docker Compose.
