@@ -1,6 +1,7 @@
 # Rendu Séance 1
 
 **Nom et prénom :** **ADEOUL Koffi Prosper**
+
 ## Résumé de la séance
 Cette première séance a permis de mettre en place la fondation de l'architecture de la plateforme de données Anfa. Nous avons configuré un environnement de stockage objet local en déployant une instance MinIO via Docker Compose, puis nous avons automatisé l'ingestion de fichiers de données brutes (référentiel transport) à l'aide d'un script Python exploitant la bibliothèque `boto3` (compatible AWS S3).
 
