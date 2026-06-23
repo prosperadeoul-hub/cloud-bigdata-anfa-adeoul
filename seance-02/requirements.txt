@@ -1,0 +1,2 @@
+# PySpark : le moteur de traitement distribué (mode local pour ce TP)
+pyspark==3.5.0

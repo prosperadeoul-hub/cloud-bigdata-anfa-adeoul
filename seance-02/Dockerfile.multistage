@@ -1,0 +1,33 @@
+# ──────────────────────────────────────────────────────────────
+# Dockerfile multi-stage : Plus besoin d'Internet pour Java !
+# ──────────────────────────────────────────────────────────────
+
+# ─── Étape 1 : builder (On prépare les dépendances Python) ────
+FROM python:3.11 AS builder
+
+WORKDIR /build
+COPY requirements.txt .
+RUN pip install --user --no-cache-dir -r requirements.txt
+
+
+# ─── Étape 2 : runtime (Image finale ultra-propre) ────────────
+# On repart d'une image Eclipse-Temurin (Java 17 officiel sous Ubuntu/Debian)
+# Elle contient DÉJÀ Java installé d'usine, aucun "apt-get update" requis !
+FROM eclipse-temurin:17-jre-alpine
+
+# On réinstalle proprement Python (Alpine inclut un gestionnaire ultra-léger et fiable)
+RUN apk add --no-cache python3 py3-pip
+
+ENV JAVA_HOME=/opt/java/openjdk
+ENV PYTHONDONTWRITEBYTECODE=1 \
+    PYTHONUNBUFFERED=1
+
+WORKDIR /app
+
+# On récupère les packages compilés à l'étape 1
+COPY --from=builder /root/.local /root/.local
+ENV PATH=/root/.local/bin:$PATH
+
+COPY . .
+
+CMD ["python3", "analyse_referentiel.py"]
