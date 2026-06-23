@@ -1,8 +1,10 @@
-# RENDU - Docker, Docker Compose et Exploration de données
+# RENDU Séance 2
 
 **Nom et prénom :** ADEOUL Koffi Prosper
+
 **Identifiant GitHub :** `<prosperadeoul-hub>`  
-**Date de soumission :** 23/06/2026
+
+**Date de soumission :** 24/06/2026
 
 ---
 
