@@ -95,3 +95,4 @@ $RECYCLE.BIN/
 *.temp
 *.orig
 *.rej
+*.exe
