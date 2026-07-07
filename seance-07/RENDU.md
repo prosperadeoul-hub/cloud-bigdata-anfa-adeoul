@@ -1,13 +1,12 @@
 # Rendu — Séance 7
 
-**Nom et prénom :** <Votre nom complet>
-**Identifiant GitHub :** <votre-username>
-**Date de soumission :** <JJ/MM/AAAA>
+**Nom et prénom :** <ADEOUL Koffi Prosper>
+**Identifiant GitHub :** <prosperadeoul-hub>
+**Date de soumission :** <07/07/2026>
 
 ## Résumé de la séance
 
-<2-4 lignes : cluster Kafka 3 brokers déployé, flotte de bus simulée en flux continu,
-tolérance aux pannes observée, Spark Structured Streaming consommant et agrégeant le flux vers MinIO.>
+Lors de cette séance, un cluster Kafka complet composé de 3 brokers a été déployé en mode KRaft pour s'affranchir de Zookeeper. Une flotte de 100 bus Anfa a ensuite été simulée pour publier en continu des positions GPS , ce qui a permis de valider la tolérance aux pannes du cluster lors de la coupure brutale d'un broker. Enfin, Spark Structured Streaming a été utilisé pour consommer ce flux en temps réel afin d'opérer des agrégations temporelles par fenêtres glissantes et d'écrire automatiquement les résultats sur MinIO.
 
 ## Étapes principales
 
@@ -37,8 +36,7 @@ tolérance aux pannes observée, Spark Structured Streaming consommant et agrég
 
 ## Réflexion personnelle
 
-<3-5 lignes : dans quel cas utiliseriez-vous Kafka + Spark Streaming plutôt que le pipeline batch
-Airflow + Spark vu en séance 5-6 ? Qu'est-ce que la réplication à 3 brokers vous a concrètement montré ?>
+Le couplage Kafka + Spark Streaming s'impose dès que la fraîcheur de l'information est critique et requiert une réactivité à la seconde (comme le suivi d'une flotte en direct ou la détection d'alertes immédiates), contrairement au pipeline batch (Airflow + Spark) qui traite les données par blocs à intervalles fixes. Concrètement, la réplication à 3 brokers m'a démontré la haute disponibilité et la résilience de l'architecture : lorsqu'un nœud s'arrête, le cluster réélit instantanément un nouveau leader pour les partitions affectées sans causer la moindre perte de données ni interruption du flux de production.
 
 ## Réponses aux exercices d'application
 
@@ -46,4 +44,9 @@ Airflow + Spark vu en séance 5-6 ? Qu'est-ce que la réplication à 3 brokers v
 
 ## Difficultés rencontrées
 
-<Aucune | Décrivez brièvement.>
+- Incompatibilité de syntaxe PowerShell sous Windows : Les commandes multi-lignes fournies dans le sujet utilisaient des antislashs (\) propres aux terminaux Linux/macOS, générant des erreurs de syntaxe dans mon terminal. 
+- Solution : Toutes les commandes de soumission spark-submit et de configuration mc ont été réécrites et exécutées sur une seule ligne continue.
+
+
+- Absence de l'outil grep sous Windows : Lors de la phase d'identification du broker à arrêter, la commande filtrée avec *grep* n'a pas été reconnue par le système. 
+- Solution : Utilisation de la commande alternative native Docker via le commutateur *--filter "name=...* pour cibler proprement le conteneur du broker.
