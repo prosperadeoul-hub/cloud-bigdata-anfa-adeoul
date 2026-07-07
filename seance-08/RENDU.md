@@ -1,7 +1,9 @@
 # Rendu — Séance 8
 
-**Nom et prénom :** <ADEOUL Koffi Prosper>
-**Identifiant GitHub :** <prosperadeoul-hub>
+**Nom et prénom :** ADEOUL Koffi Prosper
+
+**Identifiant GitHub :** prosperadeoul-hub
+
 **Date de soumission :** <07/07/2026>
 
 ## Résumé de la séance
