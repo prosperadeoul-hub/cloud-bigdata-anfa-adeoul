@@ -1,10 +1,10 @@
 # Rendu — Séance 9
 
-**Nom et prénom :** <ADEOUL Koffi Prosper>
+**Nom et prénom :** **ADEOUL Koffi Prosper**
 
-**Identifiant GitHub :** <prosperadeoul-hub>
+**Identifiant GitHub :** **prosperadeoul-hub**
 
-**Date de soumission :** <08/07/2026>
+**Date de soumission :** **08/07/2026**
 
 ## Résumé de la séance
 
@@ -36,4 +36,4 @@ Cette séance répond directement à la situation-problème d'Awa car elle démo
 
 ## Difficultés rencontrées
 
-<Aucune>
+**Aucune**
