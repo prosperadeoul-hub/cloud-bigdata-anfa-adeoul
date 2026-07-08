@@ -1,13 +1,14 @@
 # Rendu — Séance 9
 
-**Nom et prénom :** <Votre nom complet>
-**Identifiant GitHub :** <votre-username>
-**Date de soumission :** <JJ/MM/AAAA>
+**Nom et prénom :** <ADEOUL Koffi Prosper>
+
+**Identifiant GitHub :** <prosperadeoul-hub>
+
+**Date de soumission :** <08/07/2026>
 
 ## Résumé de la séance
 
-<2-4 lignes : stack Prometheus/Grafana déployée, exportateur de fraîcheur Anfa
-instrumenté, dashboard construit, alerte configurée et déclenchée sur panne simulée.>
+Cette séance a permis de déployer une stack complète de monitoring associant Prometheus, Grafana, Node Exporter avec un exportateur métier customisé. Nous avons instrumenté la métrique de fraîcheur des données d'Anfa et configuré une jauge visuelle ainsi qu'une règle d'alerte automatique sous Grafana. Enfin, la simulation d'une panne silencieuse via un fichier sentinelle a démontré l'efficacité du système pour intercepter un incident applicatif invisible sur l'infrastructure.
 
 ## Étapes principales
 
@@ -31,10 +32,8 @@ instrumenté, dashboard construit, alerte configurée et déclenchée sur panne 
 
 ## Réflexion personnelle
 
-<3-5 lignes : en quoi cette séance répond-elle directement à la situation-problème
-d'Awa dans le CM ? Qu'est-ce que la métrique de fraîcheur vous a permis de voir que
-les autres métriques (CPU, RAM, statut des conteneurs) ne montraient pas ?>
+Cette séance répond directement à la situation-problème d'Awa car elle démontre qu'un système peut être techniquement sain alors que son service métier est totalement interrompu. Là où le CPU, la RAM et le statut des conteneurs indiquaient que tout était "Up" et fonctionnel, seule la métrique de fraîcheur métier a révélé l'anomalie en se figeant et en grimpant de manière continue. Elle permet de passer d'un monitoring purement technique à une véritable observabilité axée sur la valeur et la qualité des données produites.
 
 ## Difficultés rencontrées
 
-<Aucune | Décrivez brièvement.>
+<Aucune>
