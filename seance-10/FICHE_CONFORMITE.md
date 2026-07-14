@@ -4,24 +4,19 @@
 > Il n'y a pas de "bonne réponse" unique sur certains points — l'important est le raisonnement.
 
 ## 1. Finalité du traitement
-<Pourquoi collecte-t-on ces données ? À quel usage précis, et à aucun autre ?>
+La collecte de la position GPS sert uniquement à localiser le passager en temps réel pour lui proposer l'itinéraire et l'arrêt le plus proche. Le numéro de téléphone sert d'identifiant unique pour la création du compte, tandis que l'historique de paiement mobile money sert exclusivement à valider, facturer et renouveler les abonnements de transport.
 
 ## 2. Données collectées et leur sensibilité
-<Lister les 3 données du scénario. Laquelle est la plus sensible et pourquoi ?>
+Les données collectées sont la position GPS en temps réel, l'historique de paiement mobile money et le numéro de téléphone. L'historique de paiement et la géolocalisation continue sont les données les plus sensibles : la première révèle la situation financière de l'utilisateur et ses habitudes de consommation, tandis que la seconde permet de retracer l'intégralité de ses déplacements physiques et sa vie privée.
 
 ## 3. Base légale applicable
-<Quel texte togolais s'applique à quelle donnée ? (Loi 2019-014 ? Loi 2017-007/2023-012 ?
-Les deux peuvent s'appliquer à une même donnée — expliquez pourquoi.)>
+Le traitement des données personnelles est régi par la Loi n° 2019-014 relative à la protection des données à caractère personnel au Togo. Pour la partie transactions financières et identification mobile money, la Loi n° 2017-007 sur les transactions électroniques s'applique également afin d'assurer la sécurité des paiements et la traçabilité des opérations bancaires mobiles.
 
 ## 4. Durée de conservation
-<Combien de temps ces données devraient-elles être gardées ? Justifiez en lien
-avec le principe de "minimisation" vu en CM.>
+Les données de géolocalisation doivent être supprimées immédiatement après la fin du trajet (ou conservées sous forme agrégée et anonymisée). Le numéro de téléphone est conservé tant que le compte est actif, et les données de transaction mobile money sont conservées durant la période légale requise par la réglementation financière (généralement 5 à 10 ans), respectant ainsi le principe de minimisation en limitant le stockage au strict nécessaire métier.
 
 ## 5. Hébergement et souveraineté
-<Où ces données doivent-elles être hébergées pour rester conformes à la loi
-togolaise ? Quel est le risque si on héberge chez un cloud américain ? (Patriot Act)>
+Pour se conformer à la souveraineté numérique prônée par la loi togolaise, ces données sensibles doivent être hébergées sur le territoire national (par exemple dans le datacenter d'Anfa ou un cloud togolais). Un hébergement chez un fournisseur cloud américain exposerait ces données au Cloud Act et au Patriot Act, permettant aux autorités américaines d'exiger l'accès aux données des citoyens togolais sans l'accord préalable du Togo.
 
 ## 6. Droit des personnes concernées
-<Un passager doit-il pouvoir demander la suppression de ses données ? Le système
-technique actuel d'Anfa (tel que vous l'avez construit depuis la séance 1) le
-permettrait-il facilement ? Pourquoi ?>
+Oui, le passager dispose d'un droit de suppression de ses données. Techniquement, l'architecture construite depuis la séance 1 ne permet pas une suppression facile et ciblée, car supprimer des lignes spécifiques dans des fichiers de logs stockés de manière immuable ou distribuée requiert des processus lourds de réécriture complète des fichiers de données.

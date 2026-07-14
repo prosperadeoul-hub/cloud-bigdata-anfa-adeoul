@@ -1,13 +1,14 @@
 # Rendu — Séance 10
 
-**Nom et prénom :** <Votre nom complet>
-**Identifiant GitHub :** <votre-username>
-**Date de soumission :** <JJ/MM/AAAA>
+**Nom et prénom :** <ADEOUL Koffi Prosper>
+
+**Identifiant GitHub :** <prosperadeoul-hub>
+
+**Date de soumission :** <14/07/2005>
 
 ## Résumé de la séance
 
-<2-4 lignes : serveur MLflow déployé, 3 runs d'entraînement tracés et comparés,
-meilleur modèle enregistré en Production dans le Registry, fiche de conformité rédigée.>
+Lors de cette séance, j'ai déployé un serveur MLflow pour tracer l'entraînement de nos modèles de prédiction d'affluence. Après avoir généré un jeu de données synthétique, j'ai entraîné trois variantes d'un modèle RandomForest avec différents hyperparamètres, puis je les ai comparées directement dans l'interface graphique de MLflow. Pour finir, j'ai enregistré la version la plus performante dans le Model Registry en la passant au statut Production, avant de formaliser l'ensemble de notre gouvernance de données à travers une fiche de conformité RGPD/Loi togolaise.
 
 ## Étapes principales
 
@@ -28,10 +29,8 @@ meilleur modèle enregistré en Production dans le Registry, fiche de conformit�
 
 ## Réflexion personnelle
 
-<3-5 lignes : en quoi le Model Registry résout-il le problème de Kossi dans la
-situation-problème du CM ? Quel est le lien entre "versionner un modèle" (aujourd'hui)
-et "versionner une infrastructure" (Terraform, séance 4) ?>
+Le Model Registry résout le désordre de Kossi en centralisant, traçant et versionnant rigoureusement chaque version de modèle au sein d'un cycle de vie clair (Staging, Production), évitant ainsi les notebooks dispersés. Tout comme Terraform (séance 4) automatise et standardise le déploiement d'une infrastructure via du code déclaratif, MLflow standardise et automatise la gestion des modèles en les transformant en artefacts auditables. Dans les deux cas, on élimine l'arbitraire humain pour garantir la reproductibilité et la traçabilité de bout en
 
 ## Difficultés rencontrées
 
-<Aucune | Décrivez brièvement.>
+<Aucune>
